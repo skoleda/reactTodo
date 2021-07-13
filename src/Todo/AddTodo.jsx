@@ -2,15 +2,15 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
 const useInputeValue = (defaulteValue = '') => {
-    const [value, setValue] = useState(defaulteValue)
+    const [value, setValue] = useState(defaulteValue);
 
     return {
-        bind:{
+        bind: {
             value,
-            onChange: event=>setValue(event.target.value)
+            onChange: event => setValue(event.target.value)
         },
-        clear:()=> setValue(''),
-        value:()=>value,
+        clear: () => setValue(''),
+        value: () => value,
     }
 }
 
@@ -27,9 +27,9 @@ const AddTodo = ({onCreate}) => {
 
     return (
         <React.Fragment>
-            <form style={{marginBottom: '1rem'}} onSubmit={submitHandler}>
+            <form style = {{marginBottom: '1rem'}} onSubmit={submitHandler}>
                 <input className = 'input'{...input.bind}/>
-                <button type='submit' className='btnStates'>Add Todo</button>     
+                <button type = 'submit' className = 'btnStates'>Add Todo</button>     
             </form>            
         </React.Fragment>
                       
